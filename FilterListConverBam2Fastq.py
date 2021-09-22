@@ -134,8 +134,8 @@ def sam2fastq(samfile,contigskeep):
 if __name__=="__main__": 
     parser = argparse.ArgumentParser(description="using contig keep list to extract fastq files")
     parser.add_argument('-s','--is_coord_sorted',action='store_true',help='flag for whether bam is name sorted')
-    parser.add_argument('-b','--bam_in',dest='bamin',type=str,help='compressed read alignment infile')
-    parser.add_argument('-k','--contig_keep_file',dest='keeps',type=str,help='list of contig mapping to keep')
+    parser.add_argument('-b','--bam_in',dest='bamin',type=str,help='compressed read alignment infile',required=True)
+    parser.add_argument('-k','--contig_keep_file',dest='keeps',type=str,help='list of contig mapping to keep',required=True)
     opts = parser.parse_args()  
     
     print opts
