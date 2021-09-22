@@ -37,10 +37,10 @@ def ParseFastqcLog(fastqclog):
 
 if __name__=="__main__": 
     parser = argparse.ArgumentParser(description="options for removing reads with over-represented sequences")
-    parser.add_argument('-1','--left_reads',dest='leftreads',type=str,help='R1 fastq file')
-    parser.add_argument('-2','--right_reads',dest='rightreads',type=str,help='R2 fastq file')
-    parser.add_argument('-fql','--fastqc_left',dest='l_fastqc',type=str,help='fastqc text file for R1')
-    parser.add_argument('-fqr','--fastqc_right',dest='r_fastqc',type=str,help='fastqc text file for R2')
+    parser.add_argument('-1','--left_reads',dest='leftreads',type=str,help='R1 fastq file',required=True)
+    parser.add_argument('-2','--right_reads',dest='rightreads',type=str,help='R2 fastq file',required=True)
+    parser.add_argument('-fql','--fastqc_left',dest='l_fastqc',type=str,help='fastqc text file for R1',required=True)
+    parser.add_argument('-fqr','--fastqc_right',dest='r_fastqc',type=str,help='fastqc text file for R2',required=True)
     opts = parser.parse_args()
 
     leftseqs=ParseFastqcLog(opts.l_fastqc)
