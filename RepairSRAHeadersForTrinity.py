@@ -24,8 +24,8 @@ def grouper(iterable, n, fillvalue=None):
     
 if __name__=="__main__": 
     parser = argparse.ArgumentParser(description="options for filtering and logging rCorrector fastq outputs")
-    parser.add_argument('-1','--left_reads',dest='leftreads',type=str,help='R1 fastq file')
-    parser.add_argument('-2','--right_reads',dest='rightreads',type=str,help='R2 fastq file')
+    parser.add_argument('-1','--left_reads',dest='leftreads',type=str,help='R1 fastq file',required=True)
+    parser.add_argument('-2','--right_reads',dest='rightreads',type=str,help='R2 fastq file',required=True)
     opts = parser.parse_args()
 
     r1out=open('sraheaderfixed_%s' % basename(opts.leftreads).replace('.gz',''),'w')
